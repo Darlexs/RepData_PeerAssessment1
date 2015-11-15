@@ -1,5 +1,11 @@
 **ASSIGMENTE 1-REPRODUCIBLE RESEARCH**
 ====================================
+**R preparations**
+In this document code will be represented to show how the results have been achieved. Set the default of echo to be true throughout the document:
+```{r}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+```
 
 *1. Loading and processing data.*
 ---------------------------------
