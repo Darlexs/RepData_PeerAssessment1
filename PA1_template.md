@@ -1,12 +1,5 @@
 **ASSIGMENTE 1-REPRODUCIBLE RESEARCH**
 ====================================
-**R preparations**
-In this document code will be represented to show how the results have been achieved. Set the default of echo to be true throughout the document:
-
-```r
-library(knitr)
-opts_chunk$set(echo = TRUE)
-```
 
 *1. Loading and processing data.*
 ---------------------------------
@@ -52,11 +45,9 @@ library(ggplot2)
 a=ggplot(Pasos_por_dia,aes(steps))
 a=a+geom_histogram(binwidth=800,fill="turquoise",colour = "darkgreen")
 a=a+ggtitle("Histogram of Steps Per Day")+ylab("Frequency")+xlab("Steps")
-plot(a)
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
-
+![My Figure](histogram1.png)
 
 -Calculate and report the mean and median of the total number of steps taken per day.
 
@@ -92,10 +83,9 @@ Pasos_interrvalo=aggregate(steps~interval,mean,data=Base_Actividad,na.rm=T)
 b=ggplot(Pasos_interrvalo,aes(interval,steps))
 b=b+geom_line(color="orangered1")
 b=b+ggtitle("Time Series-Mean Steps per Interval")
-plot(b)
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
+![My Figure](serietiempo1.png)
 
 -Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
   1.For this part I used the function `subset()`
@@ -127,7 +117,7 @@ sum(is.na(Base_Actividad))
 
   2.Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-  -For this part I used the mean of steps per interval
+  **-For this part I used the mean of steps per interval**
   
   3. Working in other database 
   
@@ -166,10 +156,10 @@ Base_complete$steps[is.na(Base_complete$steps)]=mean(Pasos_interrvalo$steps)
   c=ggplot(CompletSteps,aes(steps))
   c=c+geom_histogram(binwidth=800,fill="green1",colour = "darkgreen")
   c=c+ggtitle("Histogram of Steps Per Day-without NAs")+ylab("Frequency")+xlab("Steps")
-  plot(c)
 ```
 
-![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
+![My Figure](histogram2.png)
+
 
 ```r
  mean(CompletSteps$steps)
@@ -236,10 +226,8 @@ d=ggplot(StepsInterrvalo,aes(interval,steps,color=weekdays_weekends))
   d=d+geom_line()
   d=d+facet_grid(weekdays_weekends~.)
   d=d+ggtitle("Activity weekdays and weekends")
-  plot(d)
 ```
 
-![plot of chunk unnamed-chunk-18](figure/unnamed-chunk-18-1.png) 
-
+![My Figure](findesemana.png)
 
   **-It can be seen that there weekends greater activity than other days.**
