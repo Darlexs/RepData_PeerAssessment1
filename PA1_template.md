@@ -1,5 +1,12 @@
 **ASSIGMENTE 1-REPRODUCIBLE RESEARCH**
 ====================================
+**R preparations**
+In this document code will be represented to show how the results have been achieved. Set the default of echo to be true throughout the document:
+
+```r
+library(knitr)
+opts_chunk$set(echo = TRUE)
+```
 
 *1. Loading and processing data.*
 ---------------------------------
@@ -48,7 +55,7 @@ a=a+ggtitle("Histogram of Steps Per Day")+ylab("Frequency")+xlab("Steps")
 plot(a)
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
 
 
 -Calculate and report the mean and median of the total number of steps taken per day.
@@ -88,7 +95,7 @@ b=b+ggtitle("Time Series-Mean Steps per Interval")
 plot(b)
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
 -Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
   1.For this part I used the function `subset()`
@@ -162,7 +169,7 @@ Base_complete$steps[is.na(Base_complete$steps)]=mean(Pasos_interrvalo$steps)
   plot(c)
 ```
 
-![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png) 
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
 
 ```r
  mean(CompletSteps$steps)
@@ -232,7 +239,7 @@ d=ggplot(StepsInterrvalo,aes(interval,steps,color=weekdays_weekends))
   plot(d)
 ```
 
-![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17-1.png) 
+![plot of chunk unnamed-chunk-18](figure/unnamed-chunk-18-1.png) 
 
 
   **-It can be seen that there weekends greater activity than other days.**
